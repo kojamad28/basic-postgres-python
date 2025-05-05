@@ -19,7 +19,7 @@ services:
     container_name: python
     command: /bin/bash
     volumes:
-     - .:/usr/src/app
+     - .:/usr/src
     tty: true
     stdin_open: true
     depends_on:
