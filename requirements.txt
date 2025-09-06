@@ -4,6 +4,7 @@ mypy
 tox
 psycopg
 sqlalchemy
+sqlacodegen
 python-dotenv
 pytest
 structlog
