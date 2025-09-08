@@ -2,10 +2,11 @@ black
 ruff
 mypy
 tox
+structlog
+pytest
+pytest-structlog
+python-dotenv
 psycopg
 sqlalchemy
 sqlacodegen
-python-dotenv
-pytest
-structlog
-pytest-structlog
+pandas[performance]
