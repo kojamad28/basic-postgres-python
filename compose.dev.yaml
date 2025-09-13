@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    environment:
+      - TZ=Asia/Tokyo
+    env_file:
+      - ./src/db/.env.dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  python:
+    build: 
+      context: .
+      args:
+        REQ_TXT: "requirements.txt"
+    image: kojamad28/basic-postgres-python-dev
+    container_name: python
+    command: /bin/bash
+    volumes:
+     - .:/usr/src
+    tty: true
+    stdin_open: true
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
