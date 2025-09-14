@@ -1,0 +1,7 @@
+-r common.txt
+structlog
+python-dotenv
+psycopg
+sqlalchemy
+sqlacodegen
+pandas[performance]

@@ -1,12 +1,1 @@
-black
-ruff
-mypy
-tox
-structlog
-pytest
-pytest-structlog
-python-dotenv
-psycopg
-sqlalchemy
-sqlacodegen
-pandas[performance]
+-r requirements/prod.txt

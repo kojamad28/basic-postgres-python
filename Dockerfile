@@ -2,7 +2,8 @@ FROM python:3.13
 
 WORKDIR /usr/src
 
+ARG REQ_DIR
+COPY ${REQ_DIR}/ ./${REQ_DIR}/
 ARG REQ_TXT
-COPY ${REQ_TXT} ./
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r ${REQ_TXT}
+    pip install --no-cache-dir -r ${REQ_DIR}/${REQ_TXT}
