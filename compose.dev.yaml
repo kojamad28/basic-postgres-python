@@ -15,7 +15,7 @@ services:
       context: .
       args:
         REQ_DIR: "requirements"
-        REQ_TXT: "requirements.txt"
+        REQ_TXT: "dev.txt"
     image: kojamad28/basic-postgres-python-dev
     container_name: python
     command: /bin/bash
