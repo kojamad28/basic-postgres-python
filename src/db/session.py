@@ -39,7 +39,7 @@ def get_engine(dotenv_path: Path = BASE_DIR / "db" / ".env") -> Engine:
     return engine
 
 
-def get_sessionlocal(dotenv_path: Path) -> Session:
+def get_session(dotenv_path: Path) -> Session:
     """
     Create sqlalchemy.orm.Session for PostgreSQL database.
 
@@ -51,7 +51,7 @@ def get_sessionlocal(dotenv_path: Path) -> Session:
 
     returns
     -------
-    engine : sqlalchemy.orm.Session
+    sqlalchemy.orm.Session
     """
     engine = get_engine(dotenv_path)
     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
