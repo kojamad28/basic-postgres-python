@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Union
 
 from dotenv import dotenv_values
 from sqlalchemy import URL, create_engine
@@ -8,13 +9,15 @@ from sqlalchemy.orm import sessionmaker, Session
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-def get_engine(dotenv_path: Path = BASE_DIR / "db" / ".env") -> Engine:
+def get_engine(
+    dotenv_path: Union[Path, str] = BASE_DIR / "db" / ".env"
+    ) -> Engine:
     """
     Create sqlalchemy.engine.Engine for PostgreSQL database.
 
     Parameters
     ----------
-    dotenv_path : Path, default BASE_DIR / "db" / ".env"
+    dotenv_path : Union[Path, str], default BASE_DIR / "db" / ".env"
         The path for dotenv file.
         Used as a parameter for dotenv.dotenv_values method.
 
@@ -39,13 +42,15 @@ def get_engine(dotenv_path: Path = BASE_DIR / "db" / ".env") -> Engine:
     return engine
 
 
-def get_session(dotenv_path: Path) -> Session:
+def get_session(
+    dotenv_path: Union[Path, str] = BASE_DIR / "db" / ".env"
+    ) -> Session:
     """
     Create sqlalchemy.orm.Session for PostgreSQL database.
 
     Parameters
     ----------
-    dotenv_path : Path, default BASE_DIR / "db" / ".env"
+    dotenv_path : Union[Path, str], default BASE_DIR / "db" / ".env"
         The path for dotenv file.
         Used as a parameter for dotenv.dotenv_values method.
 
