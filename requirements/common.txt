@@ -1,4 +1,3 @@
--r common.txt
 structlog
 python-dotenv
 psycopg
