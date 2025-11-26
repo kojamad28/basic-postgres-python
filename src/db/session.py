@@ -26,9 +26,9 @@ def get_engine(
     engine : sqlalchemy.engine.Engine
     """
 
-    config: dict = dotenv_values(dotenv_path)
+    config = dotenv_values(dotenv_path)
 
-    url_object: URL = URL.create(
+    url_object = URL.create(
         "postgresql+psycopg",
         username=config["POSTGRES_USER"],
         password=config["POSTGRES_PASSWORD"],  # plain (unescaped) text
